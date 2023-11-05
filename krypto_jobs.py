@@ -279,9 +279,13 @@ st.sidebar.markdown("## Total Wage in Ether")
 # value of the `hours` variable
 # YOUR CODE HERE
 
+wage = candidate_database[person][3] * hours
+
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
 # YOUR CODE HERE
+
+st.sidebar.write(f"Wage for {hours} hours of work is: {wage} ETH")
 
 ##########################################
 # Step 2 - Part 2:
