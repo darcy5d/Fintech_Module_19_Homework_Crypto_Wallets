@@ -16,9 +16,10 @@ This script is a simple interface for managing a cryptocurrency wallet, allowing
 
 #### Features
 
+- **Generate Ethereum Account**: Generate an ethereum account based on a mnemonic seed phrase.
 - **Check Balance**: View how much currency is available in the wallet.
-- **Send Currency**: Transfer cryptocurrency to another wallet.
-- **Receive Currency**: Generate a receiving address for deposits.
+- **Send A Transactiony**: Transfer cryptocurrency to another wallet.
+
 
 ### `krypto_jobs.py`
 
@@ -26,9 +27,9 @@ An automation tool for scheduling cryptocurrency-related jobs. It is designed to
 
 #### Features
 
-- **Price Monitoring**: Keep an eye on the cryptocurrency price and trigger actions when certain price points are hit.
-- **Alert System**: Set up alerts to notify of certain job completions or market conditions.
-- **Transaction Initiation**: Automatically initiate transactions based on predefined rules.
+- **Account View**: Keep an eye on the wallet address and balance of your Ether account.
+- **Wage Cost Calculator**: Has a basic input that calculates the expected wage cost of using a particular worker.  It takes the hourly rate from our database and multiplies it by the selected amount of hours.
+- **Transaction Initiation**: Automatically initiate transactions based on the user's selection.
 
 ## Usage Instructions
 
