@@ -161,14 +161,13 @@ st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 # @TODO:
 #  Call the `generate_account` function and save it as the variable `account`
 account = generate_account()
-
 #Added debugging
 print(f"Generated Ethereum account address: {account.address}")
 
 ##########################################
 
 # Write the client's Ethereum account address to the sidebar
-st.sidebar.write(account.address)
+st.sidebar.write(f"Account Address: {account.address}")
 
 ##########################################
 # Step 1 - Part 5:
@@ -182,11 +181,9 @@ st.sidebar.write(account.address)
 # YOUR CODE HERE
 
 account_balance = get_balance(w3, account.address)
-
 #Debugging
 print(f"Account balance for {account.address} is: {account_balance} ETH")
 
-st.sidebar.write(f"Account Address: {account.address}")
 st.sidebar.write(f"Account Balance: {account_balance} ETH")
 
 ##########################################
@@ -281,6 +278,13 @@ st.sidebar.markdown("## Total Wage in Ether")
 # YOUR CODE HERE
 
 wage = candidate_database[person][3] * hours
+# Print wage for debugging
+print(f"DEBUG: Calculated wage for {hours} hours at rate {candidate_database[person][3]} ETH/hour is: {wage} ETH")
+#Convert wage to wei, making sure to convert wage to a string to avoid floating point issues
+wage_wei = w3.toWei(str(wage), 'ether')
+
+# Print converted wage for debugging
+print(f"DEBUG: Wage in wei: {wage_wei}")
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
@@ -315,11 +319,10 @@ if st.sidebar.button("Send Transaction"):
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
 
-    wage_wei = w3.toWei(wage, 'ether')
     transaction_hash = send_transaction(w3,
                                         account,
                                         candidate_address,
-                                        wage_wei
+                                        wage
                                        )
 
     # Markdown for the transaction hash

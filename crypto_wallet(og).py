@@ -54,42 +54,14 @@ def send_transaction(w3, account, to, wage):
     """Send an authorized transaction to the Ganache blockchain."""
     # Set gas price strategy
     w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
-    
-    gas_price = w3.eth.gasPrice
-    if not gas_price:
-        gas_price = w3.toWei('100', 'gwei')
-    # Print out the gas price for debugging
-    print(f"Gas price: {gas_price} wei")
 
     # Convert eth amount to Wei
     value = w3.toWei(wage, "ether")
-    # Print out the wage value for debugging
-    print(f"Wage (transaction value): {value} wei")
-
 
     # Calculate gas estimate
     gasEstimate = w3.eth.estimateGas(
         {"to": to, "from": account.address, "value": value}
     )
-    # Print out the gas estimate for debugging
-    print(f"Gas estimate: {gasEstimate}")
-
-    # Calculate the total transaction cost and print it for debugging
-    total_cost = gasEstimate * gas_price + value
-    print(f"Total cost of transaction: {total_cost} wei")
-    print(f"Total cost of transaction: {w3.fromWei(total_cost, 'ether')} ether")
-
-    # Get the current balance of the account and print it for debugging
-    balance = w3.eth.get_balance(account.address)
-    print(f"Balance of the account: {balance} wei")
-    print(f"Balance of the account: {w3.fromWei(balance, 'ether')} ether")
-
-    if balance < total_cost:
-        raise ValueError("Insufficient funds for gas * price + value")
-
-    # Get the nonce for the account and print it for debugging
-    nonce = w3.eth.getTransactionCount(account.address)
-    print(f"Nonce for the account: {nonce}")
 
     # Construct a raw transaction
     raw_tx = {
@@ -97,7 +69,7 @@ def send_transaction(w3, account, to, wage):
         "from": account.address,
         "value": value,
         "gas": gasEstimate,
-        "gasPrice": gas_price,
+        "gasPrice": 1,
         "nonce": w3.eth.getTransactionCount(account.address),
     }
 
