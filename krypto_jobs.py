@@ -181,12 +181,13 @@ st.sidebar.write(account.address)
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
 
-account_balance = get_balance(w3, account address)
+account_balance = get_balance(w3, account.address)
 
 #Debugging
-print(f"Account balance for {account.address} is: {account.balance} ETH")
+print(f"Account balance for {account.address} is: {account_balance} ETH")
 
 st.sidebar.write(f"Account Address: {account.address}")
+st.sidebar.write(f"Account Balance: {account_balance} ETH")
 
 ##########################################
 
@@ -313,6 +314,13 @@ if st.sidebar.button("Send Transaction"):
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
+
+    wage_wei = w3.toWei(wage, 'ether')
+    transaction_hash = send_transaction(w3,
+                                        account,
+                                        candidate_address,
+                                        wage_wei
+                                       )
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
