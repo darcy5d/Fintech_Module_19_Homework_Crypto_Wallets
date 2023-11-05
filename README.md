@@ -48,6 +48,10 @@ Launch this script via command line to bring up the StreamLit GUI
 
 The script will execute in your default browser, allowing you to perform simple tasks such as calculate the Ether that each labour option will cost; then send the calculated amount to the freelance hire to take on their services.
 
+See below gif for how the Streamlit GUI interface performs successfully in practice:
+
+![GUI and Ganache live](https://github.com/darcy5d/Fintech_Module_19_Homework_Crypto_Wallets/blob/main/screengrabs/ganche_streamlit_live2.gif?raw=true)
+
 ## Configuration
 
 - **crypto_wallet.py**: Input the relevant wallet information directly into the script to allow it to interface with your cryptocurrency holdings.
