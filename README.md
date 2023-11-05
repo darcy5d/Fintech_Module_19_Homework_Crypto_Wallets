@@ -52,6 +52,7 @@ The script will execute in your default browser, allowing you to perform simple 
 See below gif for how the Streamlit GUI interface performs successfully in practice:
 
 ![GUI and Ganache live](https://github.com/darcy5d/Fintech_Module_19_Homework_Crypto_Wallets/blob/main/screengrabs/ganche_streamlit_live2.gif?raw=true)
+To see in full resolution go to the [Vimeo link](https://vimeo.com/881344422?share=copy)
 
 ## Configuration
 
