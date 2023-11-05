@@ -77,12 +77,14 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 # * `get_balance`
 # * `send_transaction`
 
-from crypto_wallet import generate_account, get_balance, send_transaction
-
 # @TODO:
 # From `crypto_wallet.py import the functions generate_account, get_balance,
 #  and send_transaction
-# YOUR CODE HERE
+
+from crypto_wallet import generate_account, get_balance, send_transaction
+
+#Added debugging
+print ("Imported generate_account, get_balance, send_transaction functions successfully")
 
 ################################################################################
 # KryptoJobs2Go Candidate Information
@@ -158,7 +160,10 @@ st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 
 # @TODO:
 #  Call the `generate_account` function and save it as the variable `account`
-# YOUR CODE HERE
+account = generate_account()
+
+#Added debugging
+print(f"Generated Ethereum account address: {account.address}")
 
 ##########################################
 
@@ -175,6 +180,13 @@ st.sidebar.write(account.address)
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
+
+account_balance = get_balance(w3, account address)
+
+#Debugging
+print(f"Account balance for {account.address} is: {account.balance} ETH")
+
+st.sidebar.write(f"Account Address: {account.address}")
 
 ##########################################
 
