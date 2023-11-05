@@ -1,2 +1,62 @@
 # Fintech_Module_19_Homework_Crypto_Wallets
+# Darcy Davis
 A repo for my homework assignment for Module 19
+
+# Python Cryptocurrency Utilities
+
+## Overview
+
+This repository contains two Python scripts that serve different purposes within the realm of cryptocurrency management and automation.
+
+## Scripts
+
+### `crypto_wallet.py`
+
+This script is a simple interface for managing a cryptocurrency wallet, allowing users to check their balance and initiate send/receive transactions.
+
+#### Features
+
+- **Check Balance**: View how much currency is available in the wallet.
+- **Send Currency**: Transfer cryptocurrency to another wallet.
+- **Receive Currency**: Generate a receiving address for deposits.
+
+### `krypto_jobs.py`
+
+An automation tool for scheduling cryptocurrency-related jobs. It is designed to execute tasks based on specific conditions, such as price changes.
+
+#### Features
+
+- **Price Monitoring**: Keep an eye on the cryptocurrency price and trigger actions when certain price points are hit.
+- **Alert System**: Set up alerts to notify of certain job completions or market conditions.
+- **Transaction Initiation**: Automatically initiate transactions based on predefined rules.
+
+## Usage Instructions
+
+### Running `crypto_wallet.py`
+
+Execute the script via the command line to manage your cryptocurrency wallet operations:
+```python crypto_wallet.py```
+
+The script provides prompts for necessary information such as wallet details and transaction parameters.
+
+### Running `krypto_jobs.py`
+
+Launch this script via command line to bring up the StreamLit GUI
+
+```streamlit run krypto_jobs.py```
+
+
+The script will execute in your default browser, allowing you to perform simple tasks such as calculate the Ether that each labour option will cost; then send the calculated amount to the freelance hire to take on their services.
+
+## Configuration
+
+- **crypto_wallet.py**: Input the relevant wallet information directly into the script to allow it to interface with your cryptocurrency holdings.
+- **krypto_jobs.py**: Define the job conditions such as specific time frames in the Streamlit interface
+
+## License
+
+The scripts are provided under the MIT License. Refer to the `LICENSE` file for the full text.
+
+## Disclaimer
+
+These scripts was created for educational purposes. Exercise caution and ensure secure handling of all sensitive information. Test thoroughly before any live use.
